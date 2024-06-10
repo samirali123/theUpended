@@ -1,0 +1,127 @@
+{
+    "entry": {
+        "north": "Pit",
+        "south": "VaultOfGlass",
+        "east": "AscendantRealm",
+        "west": "Leviathan",
+        "vault": "Throne",
+        "objects": [
+            {"objID": "tasks", "interactions": ["LOOK"], "description": "TASKS -\nFace the Darkblade.\nConfront the Time's Conflux.\nSlay the Ahamkara.\nDestroy the Planetary Core.\n*Find the Emperor*"},
+            {"objID": "corpse", "interactions": ["LOOK"], "description": "A *corpse* lays lifelessly, slowly eroding from the pressure of time."},
+            {"objID": "vault", "interactions": ["LOOK"], "description": "A *vault*-esqe mehcanism lies at your feet. There seems no way to open this, for now..."},
+            {"objID": "Khvostov", "interactions": ["TAKE", "LOOK", "USE"], "description": "A rifle lays at rest beneath the pile of bones. It sports a bayonet, with the word *Khvostov* engraved into it."}
+        ],
+        "description": "You find yourself within a room, barely illuminated from the sunlight seeping in from the ceiling. You find 4 different paths, located at the 4 cardinal directions, each leading themselves into deep hallways.\nThe floor beneath you shimmers in gold, somehow in perfect condition."
+    },
+    "Pit": {
+        "north": "SunlessCell",
+        "south": "entry",
+        "east": "none",
+        "west": "none",
+        "objects": [
+            {"objID": "door", "interactions": ["LOOK"], "description": "a simple wooden *door*, held ajar by bones from the fallen."},
+            {"objID": "Lightblade", "interactions": ["TAKE", "LOOK", "USE"], "description": "a sword, shimmering in Light, lays for your hands. It illuminates the room brightly, acting at its own light source. They call it, the *Lightblade*."},
+            {"objID": "Pit", "interactions": ["LOOK"], "description": "the *pit*'s darkness invites you, in the north. Whether you take up the offer is up to you."}
+        ],
+        "description": "A gaping pit yawns before you, edges etches with runes and glyphs. The Darkblade is near."
+    },
+    "SunlessCell": {
+        "north": "none",
+        "south": "Pit",
+        "east": "none",
+        "west": "none",
+        "objects": [
+            {"objID": "orb", "interactions": ["LOOK", "TAKE", "USE"], "description": "A volatile *orb*, emitting powerful Light."},
+            {"objID": "totem", "interactions": ["TAKE", "LOOK"], "description": "A large *totem*, covered with glyphs, barely illuminated. A receptacle nearby awaits Light."}
+        ],
+        "enemies": [
+            {"eneID": "theDarkblade", "interactions": ["LOOK", "ATTACK"], "description": "*TheDarkblade* remains lurking in the dark shadows of the pit.", "health": 20, "attackable": false, "damageable":["lightblade"]}
+        ],
+        "description": "Alak-Hul, the Darkblade, thirsts for your Light."
+    },
+    "VaultOfGlass": {
+        "north": "entry",
+        "south": "none",
+        "east": "Future",
+        "west": "Past",
+        "objects": [
+            {"objID": "Aegis", "interactions": ["LOOK", "TAKE", "USE"], "description": "A mystical shield, left behind by a long lost soldier. This is no ordinary shield. The whispers call out, '*Aegis*', save us."},
+            {"objID": "pastPortal", "interactions": ["LOOK", "OPEN"], "description": "To the west, an *pastportal* resides, leading to a location resembling the Red Planet."},
+            {"objID": "futurePortal", "interactions": ["LOOK", "OPEN"], "description": "To the east, an *futureportal* resides, leading to a location resembling 'The Morning Star'."}
+        ],
+        "enemies": [
+            {"eneID": "Atheon", "interactions": ["LOOK", "USE", "ATTACK"], "description": "*Atheon* stands immune, holding time still in the past, present, and future.", "health": 1, "attackable": false, "damageable":["aegis"]}
+        ],
+        "description": "The Glass Throne stands tall, as the Atheon, the Time's Conflux awaits."
+    },
+    "Past": {
+        "north": "none",
+        "south": "none",
+        "east": "VaultOfGlass",
+        "west": "none",
+        "objects": [
+            {"objID": "plants", "interactions": ["LOOK"], "description": "The *plants*, untouched by civilization, and time, stand still."},
+            {"objID": "air", "interactions": ["LOOK"], "description": "The *air* stands still, but somehow you sense a pressure in space."},
+            {"objID": "throne", "interactions": ["LOOK"], "description": "The Glass *Throne* is missing in this timeline."}
+        ],
+        "description": "Undeveloped in the Past, Atheon's Throne Room."
+    },
+    "Future": {
+        "north": "none",
+        "south": "none",
+        "east": "none",
+        "west": "VaultOfGlass",
+        "objects": [
+            {"objID": "sands", "interactions": ["LOOK"], "description": "The *sands* that shifts beneath your boots has a hue of deep Scarlet."},
+            {"objID": "air", "interactions": ["LOOK"], "description": "The *air* stands still, but somehow you sense a pressure in space."},
+            {"objID": "throne", "interactions": ["LOOK"], "description": "The Glass *Throne* is ruined in this timeline."}
+        ],
+        "description": "Ruins from the Future, Atheon's Throne Room."
+    },
+    "Leviathan": {
+        "north": "none",
+        "south": "none",
+        "east": "entry",
+        "west": "none",
+        "objects": [
+            {"objID": "void", "interactions": ["LOOK", "USE"], "description": "A powerful relic that harnesses the power of the *void*, weaponizing cosmic distortion."},
+            {"objID": "solar", "interactions": ["LOOK", "USE"], "description": "A powerful relic that harnesses the power of the *solar* Sun."},
+            {"objID": "arc", "interactions": ["LOOK", "USE"], "description": "A powerful relic that harnesses the power of *arc*-ing electromagnetism."},
+            {"objID": "siva", "interactions": ["LOOK", "USE"], "description": "A powerful relic that harnesses the power of weaponized biotechnology, called *siva*."},
+            {"objID": "stasis", "interactions": ["LOOK", "USE"], "description": "A powerful relic that harnesses the power of control and *stasis*."},
+            {"objID": "strand", "interactions": ["LOOK", "USE"], "description": "A powerful relic that harnesses the power of the natural flow of the *strand* that life follows."}
+        ],
+        "enemies": [
+            {"eneID": "Argos", "interactions": ["LOOK", "USE", "ATTACK"], "description": "The Planetary Core stands strong.", "health": 1, "attackable": false, "damageable":["lightblade", "khvostov"]}
+        ],
+        "description": "From the Sol Collective, Argos, the Planetary Core, boasts from within his protection."
+    },
+    "AscendantRealm": {
+        "north": "none",
+        "south": "none",
+        "east": "none",
+        "west": "entry",
+        "objects": [
+        ],
+        "enemies": [
+            {"eneID": "Riven", "interactions": ["LOOK", "ATTACK"], "description": "*Riven* boasts 3 eyes, covering her massive maw. Each have it's own functionality, allowing the Ahamkara to make divine wishes.", "health": 1, "attackable": false, "damageable":["khvostov"]},
+            {"eneID": "Eye1", "interactions": ["LOOK", "ATTACK"], "description": "*Eye1*, responsible for the bliss wishes can bring.", "health": 1, "attackable": true, "damageable":["khvostov"]},
+            {"eneID": "Eye2", "interactions": ["LOOK", "ATTACK"], "description": "*Eye2*, responsible for the unimaginable pain wishes can bring", "health": 1, "attackable": true, "damageable":["khvostov"]},
+            {"eneID": "Eye3", "interactions": ["LOOK", "ATTACK"], "description": "*Eye3*, responsible for the greed wishes can bring.", "health": 1, "attackable": true, "damageable":["khvostov"]}
+        ],
+        "description": "Riven, of a Thousand Voices, the Last Known Ahamkara. She is taken, and her death, is your calling."
+    },
+    "Throne": {
+        "north": "none",
+        "south": "none",
+        "east": "none",
+        "west": "none",
+        "objects": [
+            {"objID": "chalice", "interactions": ["LOOK", "TAKE", "USE"], "description": "Calus' *chalice*, that rests in the grip of his meaty hands. He asks you to take it, and to drink [*use*] it."},
+            {"objID": "floor", "interactions": ["LOOK"], "description": "Calus' *floor* is reaming in gold and diamond."},
+            {"objID": "walls", "interactions": ["LOOK"], "description": "The *walls* rise up multiple hundreds of feet. You are unsure how you survived the drop."}
+            
+        ],
+        "description": "Calus, the Emperor, stands before you, as you fall onto the floor from the ceiling."
+    }
+}
